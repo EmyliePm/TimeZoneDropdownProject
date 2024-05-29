@@ -1,3 +1,17 @@
-h1 {
-  color: aqua;
+.cities,
+.cityLabel {
+  font-size: 25px;
+}
+
+.default {
+  background-color: aquamarine;
+}
+.tokyo {
+  background-color: yellow;
+}
+.london {
+  background-color: blue;
+}
+.paris {
+  background-color: red;
 }
