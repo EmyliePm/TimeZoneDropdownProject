@@ -1,22 +1,12 @@
-function showSelectedCity(event) {
-  let getTokyoTime = moment()
-    .tz("Asia/Tokyo")
-    .format("dddd, MMMM D, YYYY h:m A");
-  let getLondonTime = moment()
-    .tz("Europe/London")
-    .format("dddd, MMMM D, YYYY h:m A");
-  let getParisTime = moment()
-    .tz("Europe/Paris")
-    .format("dddd, MMMM D, YYYY h:m A");
-  if (event.target.value === "tokyo") {
-    alert(`It is ${getTokyoTime} in Asia/Tokyo`);
-  }
-  if (event.target.value === "london") {
-    alert(`It is ${getLondonTime} in Europe/London`);
-  }
-  if (event.target.value === "paris") {
-    alert(`It is ${getParisTime} in Europe/Paris`);
+function showDate(event) {
+  if (event.target.value.length > 0) {
+    let currentTime = moment()
+      .tz(event.target.value)
+      .format("dddd, MMMM D, YYYY h:mm A");
+
+    alert(`It is ${currentTime} in ${event.target.value}`);
   }
 }
-let citiesSelect = document.querySelector("#cities");
-citiesSelect.addEventListener("change", showSelectedCity);
+
+let selectElement = document.querySelector("#cities");
+selectElement.addEventListener("change", showDate);
